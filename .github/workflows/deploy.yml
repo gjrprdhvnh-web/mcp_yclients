@@ -5,6 +5,11 @@ on:
     branches: [master]
   workflow_dispatch:
 
+env:
+  SERVER_IP: 186.246.29.40
+  SERVER_USER: root
+  APP_DIR: /opt/yclients-mcp-server
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
