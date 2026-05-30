@@ -55,6 +55,7 @@ jobs:
             # Deploy with compose
             export YCLIENTS_PARTNER_TOKEN="${{ secrets.YCLIENTS_PARTNER_TOKEN }}"
             export YCLIENTS_USER_TOKEN="${{ secrets.YCLIENTS_USER_TOKEN }}"
+            export MCP_API_KEY="${{ secrets.MCP_API_KEY }}"
 
             docker-compose down --remove-orphans
             docker-compose up -d --build
