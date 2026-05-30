@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  yclients-mcp:
+    build: .
+    container_name: yclients-mcp
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - YCLIENTS_PARTNER_TOKEN=${YCLIENTS_PARTNER_TOKEN}
+      - YCLIENTS_USER_TOKEN=${YCLIENTS_USER_TOKEN}
+      - MCP_TRANSPORT=https
+      - MCP_HOST=0.0.0.0
+      - MCP_PORT=8000
