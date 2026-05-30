@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
 
 env:
+  SERVER_IP: 185.233.187.98
+  SERVER_USER: root
   APP_DIR: /opt/yclients-mcp-server
 
 jobs:
