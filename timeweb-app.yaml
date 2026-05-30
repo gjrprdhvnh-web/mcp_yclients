@@ -6,7 +6,7 @@ app:
   is_production: true
   
   repository:
-    url: https://github.com/greenrun666/yclients-mcp-server.git
+    url: https://github.com/gjrprdhvnh-web/mcp_yclients.git
     branch: master
   
   configuration:
