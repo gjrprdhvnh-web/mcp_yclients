@@ -7,7 +7,7 @@ app:
   
   repository:
     url: https://github.com/gjrprdhvnh-web/mcp_yclients.git
-    branch: master
+    branch: main
   
   configuration:
     build_cmd: pip install -e .
