@@ -38,11 +38,11 @@ class Settings(BaseSettings):
         description="Logging level"
     )
     mcp_allowed_hosts: str = Field(
-        default="localhost,localhost:*,127.0.0.1,127.0.0.1:*,186.246.29.40:*, 186.246.29.40",
+        default="localhost,localhost:*,127.0.0.1,127.0.0.1:*,186.246.29.40:*, 186.246.29.40, jab-yclients.ru, jab-yclients.ru:*",
         description="Comma-separated list of allowed Host headers"
     )
     mcp_allowed_origins: str = Field(
-        default="http://localhost,http://localhost:*,http://127.0.0.1,http://127.0.0.1:*,https://186.246.29.40,http://186.246.29.40",
+        default="http://localhost,http://localhost:*,http://127.0.0.1,http://127.0.0.1:*,https://186.246.29.40,http://186.246.29.40,https://jab-yclients.ru,http://jab-yclients.ru",
         description="Comma-separated list of allowed Origin headers"
     )
     
