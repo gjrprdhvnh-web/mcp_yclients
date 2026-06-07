@@ -5,8 +5,8 @@ services:
     build: .
     container_name: yclients-mcp
     restart: unless-stopped
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     environment:
       - YCLIENTS_PARTNER_TOKEN=${YCLIENTS_PARTNER_TOKEN}
       - YCLIENTS_USER_TOKEN=${YCLIENTS_USER_TOKEN}
