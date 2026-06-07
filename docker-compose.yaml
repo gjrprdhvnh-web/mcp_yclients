@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  yclients-mcp:
+  app:
     build: .
     container_name: yclients-mcp
     restart: unless-stopped
@@ -14,3 +14,34 @@ services:
       - MCP_TRANSPORT=https
       - MCP_HOST=0.0.0.0
       - MCP_PORT=8000
+    networks:
+      - ycmcp-network
+
+  nginx:
+    build: ./nginx
+    container_name: ycmcp-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - MCP_API_KEY=${MCP_API_KEY}
+    volumes:
+      # Монтируем SSL сертификаты с хоста
+      - /etc/letsencrypt/live/jab-yclients.ru/fullchain.pem:/etc/nginx/ssl/fullchain.pem:ro
+      - /etc/letsencrypt/live/jab-yclients.ru/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
+      # Опционально: для автообновления сертификатов
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - app
+    restart: unless-stopped
+    networks:
+      - ycmcp-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  ycmcp-network:
+    driver: bridge
