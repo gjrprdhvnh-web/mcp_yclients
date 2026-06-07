@@ -23,7 +23,7 @@ server {
 
     client_max_body_size 10M;
 
-    location / {
+    location /mcp {
         if ($http_x_api_key != ${MCP_API_KEY}) {
             return 401;
         }
