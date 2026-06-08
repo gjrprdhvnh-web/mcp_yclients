@@ -29,10 +29,6 @@ server {
     }
 
     location /mcp {
-        if ($http_x_api_key != ${MCP_API_KEY}) {
-            return 401;
-        }
-
         proxy_pass http://app:8000;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
