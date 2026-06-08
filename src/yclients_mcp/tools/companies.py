@@ -11,7 +11,7 @@ def register_company_tools(mcp):
     @mcp.tool()
     async def yclients_get_companies(
         group_id: int | None = None,
-        my: int = 1,
+        only_my_companies: int = 1,
         active: int | None = None,
         moderated: int | None = None,
         page: int = 1,
@@ -22,7 +22,7 @@ def register_company_tools(mcp):
         
         Args:
             group_id: Filter by company group ID
-            my: 1 to get only user's companies, 0 for all
+            only_my_companies: 1 to get only user's companies, 0 for all
             active: Filter by active status (1/0)
             moderated: Filter by moderation status (1/0)
             page: Page number for pagination
@@ -31,7 +31,7 @@ def register_company_tools(mcp):
         Returns:
             JSON string with list of companies
         """
-        params = {"my": my, "page": page, "count": count}
+        params = {"only_my_companies": only_my_companies, "page": page, "count": count}
         if group_id is not None:
             params["group_id"] = group_id
         if active is not None:
