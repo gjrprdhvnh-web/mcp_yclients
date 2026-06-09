@@ -8,6 +8,7 @@ from .records import register_record_tools
 from .booking import register_booking_tools
 from .schedule import register_schedule_tools
 from .analytics import register_analytics_tools
+from .common import register_common_tools
 
 
 def register_all_tools(mcp_server):
@@ -20,3 +21,4 @@ def register_all_tools(mcp_server):
     register_booking_tools(mcp_server)
     register_schedule_tools(mcp_server)
     register_analytics_tools(mcp_server)
+    register_common_tools(mcp_server)
