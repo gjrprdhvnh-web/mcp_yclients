@@ -4,7 +4,7 @@ import json
 from typing import Any
 from ..client import yclients_client
 from datetime import datetime
-import zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo
 
 
 def register_common_tools(mcp):
