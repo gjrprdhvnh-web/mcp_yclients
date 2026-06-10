@@ -13,4 +13,4 @@ def register_common_tools(mcp):
     @mcp.tool()
     async def get_current_date() -> str:
         """Get current date"""
-        return datetime.now(ZoneInfo('Europe/Moscow')).date()
+        return datetime.now(ZoneInfo('Europe/Moscow')).date().isoformat()
