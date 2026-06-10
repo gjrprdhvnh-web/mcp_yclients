@@ -9,7 +9,6 @@ class Settings(BaseSettings):
     """Server configuration from environment variables."""
     
     yclients_partner_token: str = Field(
-        required = true,
         description="YCLIENTS Partner API token (required)"
     )
     yclients_user_token: str = Field(
