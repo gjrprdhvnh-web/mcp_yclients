@@ -31,7 +31,7 @@ def register_company_tools(mcp):
         Returns:
             JSON string with list of companies
         """
-        params = {"only_my_companies": only_my_companies, "page": page, "count": count}
+        params = {"my": only_my_companies, "page": page, "count": count}
         if group_id is not None:
             params["group_id"] = group_id
         if active is not None:
